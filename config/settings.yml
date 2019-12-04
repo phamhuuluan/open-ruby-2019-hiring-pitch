@@ -1,8 +1,12 @@
-  users:
-    name:
-      max_length : 50
-    email:
-      max_length : 255
-      email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-    password:
-      max_length: 6
+users:
+  name:
+    max_length : 50
+  email:
+    max_length : 255
+    email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  password:
+    max_length: 6
+
+home:
+  img_baner: "https://placehold.it/1200x400?text=IMAGE"
+  img_container: "https://placehold.it/150x80?text=IMAGE"
