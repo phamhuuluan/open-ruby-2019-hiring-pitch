@@ -10,6 +10,7 @@ en:
       base_title: "OpenRuby2019HiringPitch"
     
     header:
+      home: "Home"
       logo: "AIC sport"
       sign_in: "Sign in"
       log_in: "Log in"
@@ -17,3 +18,21 @@ en:
     
     footer: 
       footer: "BY Pham Huu Luan"
+
+  users:
+    new: 
+      sign_up: "Sign up"
+      p_signup: "Please fill in this form to create an account!"
+      name : "Username"
+      email: "Email Address"
+      password: "Password"
+      password_confirmation:  "Confirm Password"
+      submit: "Submit"
+      already: "Already have an account? %{href}"
+    create: 
+      error: "Error!"
+
+  shared:
+    error_messages:
+      error: "error"
+      the_form: "The form contains"

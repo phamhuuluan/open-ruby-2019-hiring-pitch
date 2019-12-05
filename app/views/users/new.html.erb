@@ -1,0 +1,36 @@
+<% provide :title, t(".sign_up") %>
+<div class="signup-form">
+  <%= form_for @user do |f| %>
+    <%= render "shared/error_messages" %>
+    <h1><%= t ".sign_up" %></h1>
+    <p><%= t ".p_signup" %></p><hr>
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <%= f.text_field :fullname, class: "form-control", placeholder: t(".name"), required:"required" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+        <%= f.email_field :email, class: "form-control", placeholder: t(".email"), required:"required" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <%= f.password_field :password, class: "form-control", placeholder: t(".password"), required:"required" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-lock"></i><i class="fa fa-check"></i></span>
+      <%= f.password_field :password_confirmation, class: "form-control", placeholder: t(".password_confirmation"), required: "required" %>
+      </div>
+    </div>
+    <div class="form-group ">
+    <%= f.submit t".submit", class: "btn btn-success" %>
+    </div>
+  <% end %>
+  <div class="text-center"><%= t(".already", href: link_to(t(".login"), "#" )).html_safe %></div>
+</div>

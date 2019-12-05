@@ -4,7 +4,8 @@
     <%= link_to t(".logo"), "#", id: "logo" %>
     </div>
     <ul class="nav navbar-nav navbar-right">
-    <li><%= link_to t(".sign_in"), "#" %></li>
+    <li><%= link_to t(".home"), root_path %></li>
+    <li><%= link_to t(".sign_in"), signup_path %></li>
     <li><%= link_to t(".log_in"), "#" %></li></ul>
   <%= form_tag("#", class: "navbar-form navbar-center", role: "search") do |f| %>
     <div class="input-group col-md-6">
