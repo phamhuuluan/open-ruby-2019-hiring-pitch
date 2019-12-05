@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_141016) do
+ActiveRecord::Schema.define(version: 2019_12_05_021223) do
 
   create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "start_time"
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 2019_12_02_141016) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "profile_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "phone"
+    t.string "address"
+    t.string "avatar"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "ratings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "star"
     t.datetime "created_at", precision: 6, null: false
@@ -63,14 +71,11 @@ ActiveRecord::Schema.define(version: 2019_12_02_141016) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "fullname"
-    t.string "phone"
-    t.string "address"
-    t.string "avatar"
     t.string "email"
-    t.string "password_digest"
     t.integer "role", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
 end
