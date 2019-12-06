@@ -16,8 +16,16 @@ class User < ApplicationRecord
   has_secure_password
   
   USER_PARAMS = %i(fullname email password password_confirmation).freeze
-
+ 
+  class << self
+    def digest string
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+      BCrypt::Password.create(string, cost: cost)
+    end
+  end
+  
   private
+
   def downcase_email
     email.downcase!
   end
