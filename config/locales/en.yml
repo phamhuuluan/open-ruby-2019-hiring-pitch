@@ -15,6 +15,10 @@ en:
       sign_in: "Sign in"
       log_in: "Log in"
       search: "Search"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      log_out: "Log out"
     
     footer: 
       footer: "BY Pham Huu Luan"
@@ -36,3 +40,15 @@ en:
     error_messages:
       error: "error"
       the_form: "The form contains"
+  
+  sessions:
+    new:
+      login: "Login"
+      email: "Email Address"
+      password: "Password"
+      submit: "Login"
+      donnot: "Don't have an account? %{href1}"
+      remember : "Remember" 
+      forgot: "Forgot Password?"
+    create:
+      danger: "Invalid email/password combination"
