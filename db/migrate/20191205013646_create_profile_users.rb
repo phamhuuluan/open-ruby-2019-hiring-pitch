@@ -10,6 +10,6 @@ class CreateProfileUsers < ActiveRecord::Migration[6.0]
   end
 
   def down
-    drop_table :products
+    drop_table :profile_users
   end
 end

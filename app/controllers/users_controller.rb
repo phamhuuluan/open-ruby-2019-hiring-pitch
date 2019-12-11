@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: %i(show edit update)
+  before_action :correct_user, only: %i(edit update)
 
   def new
     @user = User.new 
@@ -40,7 +41,11 @@ class UsersController < ApplicationController
   def update_user_params
     params.require(:user).permit User::USER_UPDATE_PARAMS
   end
-
+  
+  def correct_user
+    redirect_to(root_url) unless current_user?(@user)
+  end
+  
   def load_user
     @user = User.find_by id: params[:id]
 
@@ -48,5 +53,4 @@ class UsersController < ApplicationController
     flash[:danger] = t ".not_found" 
     redirect_to root_url
   end
-
 end
