@@ -1,5 +1,5 @@
 class Owner::PitchesController < OwnerController
-  before_action :load_pitch, only: %i(show edit update)
+  before_action :load_pitch, only: %i(edit update)
   before_action :correct_user, only: :destroy
 
   def index
@@ -7,24 +7,21 @@ class Owner::PitchesController < OwnerController
   end
 
   def new
-    @pitch = Pitch.new 
-  end 
+    @pitch = Pitch.new
+  end
 
-  def create 
+  def create
     @pitch = current_user.pitches.build pitch_params
 
     if @pitch.save
       redirect_to owner_pitches_path
     else
-      flash.now[:danger] =  t ".error"
       render :new
     end
   end
-  
-  def show; end
 
   def edit; end
-  
+
   def update
     if @pitch.update_attributes pitch_params
       flash[:success] = t ".success"
@@ -37,7 +34,7 @@ class Owner::PitchesController < OwnerController
 
   def destroy
     @pitch.destroy
-    
+
     if @pitch.destroyed?
       flash[:success] = t ".delete_pitch"
       redirect_to request.referrer || root_url
@@ -52,15 +49,15 @@ class Owner::PitchesController < OwnerController
   def pitch_params
     params.require(:pitch).permit Pitch::PITCH_PARAMS
   end
-  
+
   def load_pitch
     @pitch = Pitch.find_by id: params[:id]
 
     return if @pitch
-    flash[:danger] = t ".not_found" 
+    flash[:danger] = t ".not_found"
     redirect_to owner_pitches_path
   end
-  
+
   def correct_user
     @pitch = current_user.pitches.find_by id: params[:id]
     redirect_to owner_pitches_path unless @pitch

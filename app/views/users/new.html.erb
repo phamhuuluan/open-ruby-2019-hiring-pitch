@@ -1,7 +1,7 @@
 <% provide :title, t(".sign_up") %>
 <div class="signup-form">
   <%= form_for @user do |f| %>
-    <%= render "shared/error_messages" %>
+    <%= render "shared/error_messages", object: f.object %>
     <h1><%= t ".sign_up" %></h1>
     <p><%= t ".p_signup" %></p><hr>
     <div class="form-group">

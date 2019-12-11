@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_25_191241) do
+ActiveRecord::Schema.define(version: 2020_01_06_200920) do
 
   create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "start_time"
@@ -34,10 +34,11 @@ ActiveRecord::Schema.define(version: 2019_12_25_191241) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.float "price"
-    t.integer "status"
+    t.integer "status", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.index ["user_id", "created_at"], name: "index_pitches_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_pitches_on_user_id"
   end
 
