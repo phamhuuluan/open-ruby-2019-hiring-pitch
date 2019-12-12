@@ -4,6 +4,8 @@ en:
       home: "Hiring-Pitch"
       welcome: "Welcome"
       some_text: "Some text.."
+      aic: "AIC SPORT"
+      banner: "Prestige quality convenience"
   
   layouts: 
     application:
@@ -35,6 +37,32 @@ en:
       already: "Already have an account? %{href}"
     create: 
       error: "Error!"
+    update:
+      success: "Profile updated"
+      danger: "Erorr Update"
+    edit:
+      edit: "Edit Profile"
+      name : "User Name:"
+      email: "Email Address"
+      password: "Password"
+      password_confirmation:  "Confirm Password"
+      phone: "Phone :"
+      address: "Address :"
+      upload: "Upload a different photo..."
+      info: "Personal info"
+      submit: "Save Changes"
+    show: 
+      name : "User Name:"
+      email: "Email :"
+      password: "Password"
+      info: "User info"
+      password_confirmation:  "Confirm Password"
+      phone: "Phone :"
+      address: "Address :"
+    load_user:
+      not_found: "Not Found User"
+    avatar_size: 
+      errors: "should be less than 5MB"
 
   shared:
     error_messages:
