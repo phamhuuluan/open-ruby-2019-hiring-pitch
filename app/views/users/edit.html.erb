@@ -1,0 +1,49 @@
+<% provide :title, t(".edit") %>
+<div class="container">
+  <h1><%= t ".edit" %></h1><hr>
+  <%= form_for @user do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="text-center">
+          <%= image_tag(get_image(@user), alt: "avatar", class: "avatar img-circle") %>
+          <h6><%= t ".upload"%> </h6>
+          <%= f.file_field :avatar, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-9 personal-info">
+        <h3><%= t ".info" %></h3>
+        <div class="form-group">
+          <%= f.label t(".name") , class:"col-lg-3 control-label" %>
+          <div class="col-lg-8"><%= f.text_field :fullname, class: "form-control" %><br></div>
+        </div>
+        <div class="form-group">
+          <%= f.label t(".email") , class:"col-lg-3 control-label" %>
+          <div class="col-lg-8"><%= f.email_field :email, class: "form-control" %><br></div>
+        </div>
+        <div class="form-group">
+          <%= f.label t(".password"), class:"col-lg-3 control-label" %>
+          <div class="col-lg-8"><%= f.password_field :password, class: "form-control" %><br></div>
+        </div>
+        <div class="form-group">
+          <%= f.label t(".password_confirmation") , class:"col-lg-3 control-label" %>
+          <div class="col-lg-8"><%= f.password_field :password_confirmation, class: "form-control" %><br></div>
+        </div>
+          <div class="form-group">
+            <%= f.label t(".phone") , class:"col-lg-3 control-label" %>
+            <div class="col-md-8"><%= f.number_field :phone, class: "form-control" %><br></div>
+          </div>
+          <div class="form-group">
+            <%= f.label t(".address") , class:"col-lg-3 control-label" %>
+            <div class="col-md-8"><%= f.text_field :address, class: "form-control" %><br></div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <%= button_tag:type, class: "btn btn-primary" do %><% t ".submit" %><% end %>
+            </div>
+          </div>
+      </div>
+   </div>
+  <% end %>
+</div>

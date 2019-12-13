@@ -6,7 +6,15 @@ users:
     email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   password:
     max_length: 6
+  avatar_size:
+    size: 5
 
 home:
   img_baner: "https://placehold.it/1200x400?text=IMAGE"
   img_container: "https://placehold.it/150x80?text=IMAGE"
+uploaders:
+  extension_whitelist: ["jpg", "jpeg", "gif", "png"]
+helper:
+  avatar: "generic-user-purple.png"
+uploader:
+  resize_to_limit: [400,400]
