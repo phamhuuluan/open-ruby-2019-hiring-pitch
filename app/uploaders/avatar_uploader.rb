@@ -1,6 +1,6 @@
 class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  process resize_to_limit :Settings.uploader.resize_to_limit
+  process resize_to_limit: Settings.uploader.resize_to_limit
   
   storage :file
  

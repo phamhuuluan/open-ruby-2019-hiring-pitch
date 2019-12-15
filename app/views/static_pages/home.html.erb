@@ -1,17 +1,42 @@
 <% provide :title, t(".home") %>
-<section class="home">
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <%= image_tag Settings.home.img_baner, alt: "Image" %>
+<div class= "home">
+  <section class="carousel-default">
+    <div id="carousel-default" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-default" data-slide-to="1" class=""></li>
+        <li data-target="#carousel-default" data-slide-to="2" class="active"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item">
+          <%= image_tag Settings.home.img_baner %>
+          <div class="carousel-caption">
+            <h3><%= t ".aic" %></h3>
+            <p><%= t ".banner" %></p>
+          </div>
+        </div>
+        <div class="item active">
+          <%= image_tag Settings.home.img_baner %>
+          <div class="carousel-caption">
+            <h3><%= t ".aic" %></h3>
+            <p><%= t ".banner" %></p>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#carousel-default" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-default" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </a>
     </div>
-  </div>
+  </section>
   <div class="container-fluid bg-3 text-center">    
     <h3><%= t".welcome" %></h3><br>
     <div class="row">
       <div class="col-sm-3">
         <p><%= t".some_text" %></p>
-        <%= image_tag Settings.home.img_container, class: "img-responsive", alt: "Image" %>
+        <%= image_tag Settings.home.img_container, class: "img-responsive" %>
       </div>
     </div>
   </div>
-</section>
+<div>
