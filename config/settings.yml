@@ -16,5 +16,7 @@ uploaders:
   extension_whitelist: ["jpg", "jpeg", "gif", "png"]
 helper:
   avatar: "generic-user-purple.png"
+  image: "image_pitch.jpg"
 uploader:
   resize_to_limit: [400,400]
+perpage: 10

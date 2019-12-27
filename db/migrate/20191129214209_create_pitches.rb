@@ -7,9 +7,10 @@ class CreatePitches < ActiveRecord::Migration[6.0]
       t.datetime :start_time
       t.datetime :end_time
       t.float :price
-      t.integer :status
+      t.integer :status, default: 1
 
       t.timestamps
     end
+    add_index :pitches, [:user_id, :created_at]
   end
 end

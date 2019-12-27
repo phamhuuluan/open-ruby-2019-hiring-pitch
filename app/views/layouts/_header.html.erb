@@ -1,18 +1,8 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-    <%= link_to t(".logo"), "#", id: "logo" %>
+    <%= link_to t(".logo"), root_path, id: "logo" %>
     </div>
-  <%= form_tag("#", class: "navbar-form navbar-center", role: "search") do |f| %>
-    <div class="input-group col-md-6">
-    <%= text_field_tag :search, "", class: "form-control", placeholder: t(".search") %>
-    <div class="input-group-btn">
-     <%= link_to "#", class:"btn btn-default col-md-4" do %>
-     <i class="glyphicon glyphicon-search"></i>
-     <% end %>
-    </div>
-    </div>
-  <% end %>
   <ul class="nav navbar-nav navbar-right">
     <li><%= link_to t(".home"), root_path %></li>
     <li><%= link_to t(".sign_in"), signup_path %></li>
@@ -23,7 +13,10 @@
     <% end %>    
       <ul class="dropdown-menu">
         <li><%= link_to t(".profile"), current_user %></li>
+        <li class="divider"></li>
         <li><%= link_to t(".settings"), edit_user_path(current_user) %></li>
+        <li class="divider"></li>
+        <li><%= link_to t(".owner"), owner_pitches_path %></li>
         <li class="divider"></li>
         <li><%= link_to t(".log_out"), logout_path, method: :delete %></li>
       </ul>
