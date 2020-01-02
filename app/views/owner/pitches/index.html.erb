@@ -1,0 +1,32 @@
+<% provide :title, t(".pitch") %>
+<div class="container">
+  <h2><%= t ".pitch" %></h2>
+  <div>
+    <%= form_tag("#", class: "navbar-form navbar-right", role: "search") do |f| %>
+    <div class="input-group">
+      <%= text_field_tag :search, "", classe: "form-control", placeholder: t(".search") %>
+        <div class="input-group-btn">
+          <%= link_to "#", class:"btn btn-default" do %><i class="glyphicon glyphicon-search"></i><% end %>
+        </div>
+    </div>
+    <% end %>
+  </div>
+  <%= link_to t(".add"), new_owner_pitch_path, class: "btn btn-info" %>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><%= t ".description" %></th>
+        <th><%= t ".address" %></th>
+        <th class="image_index"><%= t ".image" %></th>
+        <th><%= t ".start_time" %></th>
+        <th><%= t ".end_time" %></th>
+        <th><%= t ".price" %></th>
+        <th><%= t ".status" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @pitches %> 
+    </tbody>
+  </table>
+  <%= paginate @pitches, theme: "twitter-bootstrap-3" %>   
+</div>

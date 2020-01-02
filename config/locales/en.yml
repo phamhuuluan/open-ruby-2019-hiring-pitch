@@ -6,6 +6,7 @@ en:
       some_text: "Some text.."
       aic: "AIC SPORT"
       banner: "Prestige quality convenience"
+      search: "Search"
   
   layouts: 
     application:
@@ -16,11 +17,11 @@ en:
       logo: "AIC sport"
       sign_in: "Sign in"
       log_in: "Log in"
-      search: "Search"
       account: "Account"
       profile: "Profile"
       settings: "Settings"
       log_out: "Log out"
+      owner: "Owner"
     
     footer: 
       footer: "BY Pham Huu Luan"
@@ -63,6 +64,8 @@ en:
       not_found: "Not Found User"
     avatar_size: 
       errors: "should be less than 5MB"
+    action_time:
+      errors: "Start time must be less than end time"
 
   shared:
     error_messages:
@@ -80,3 +83,50 @@ en:
       forgot: "Forgot Password?"
     create:
       danger: "Invalid email/password combination"
+
+  owner:
+    pitches:
+      index:
+        danger: "Invalid user, Please register to use the service"
+        add: "Add New"
+        description: "Description"
+        address: "Address"
+        image: "Image"
+        start_time: "Start Time"
+        end_time: "End Time"
+        price: "Price"
+        status: "Status"
+        search: "Search"
+        pitch: "Pitch Management"
+      edit:
+        not_found: "Not found pitches"
+        update: "Update Pitches"
+      create:
+        error: "Error Create"
+      update:
+        success: "Complete Update"
+        not_update: "Erorr Update"
+      destroy:
+        delete_pitch: "Complete Delete"
+        not_deleted: "Erorr Delete"
+      show:
+        not_found: "Not Found Pitch"
+      form:
+        submit: "Submit"
+        description: "Description"
+        address: "Address"
+        image: "Image"
+        start_time: "Start Time"
+        end_time: "End Time"
+        price: "Price"
+        status: "Status"
+        disable: "Disable"
+        enable: "Enable"
+      new:
+        new: "New Pitches"
+      pitch:
+        sure: "You Sure?"
+        update: "Update"
+        delete: "Delete"
+        disable: "Disable"
+        enable: "Enable"

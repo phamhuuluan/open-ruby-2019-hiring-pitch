@@ -1,0 +1,11 @@
+<tr>
+  <td><%= pitch.description %></td>
+  <td><%= pitch.address %></td>
+  <td><%= get_image_pitch pitch %></td>
+  <td><%= pitch.start_time %></td>
+  <td><%= pitch.end_time %></td>
+  <td><%= pitch.price %></td>
+  <td><%= t(".owner.pitches.pitch.#{pitch.status}") %></td>
+  <th><td><%= link_to t("update"), edit_owner_pitch_path(pitch.id), class: "btn btn-primary" %></td>
+  <td><%= link_to t("delete"), owner_pitch_path(pitch.id), method: :delete, data: { confirm: t(".sure") }, class: "btn btn-danger" %></td></th>
+</tr>
