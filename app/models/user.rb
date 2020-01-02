@@ -3,10 +3,11 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
-  has_many :pitch_owners
+  has_many :pitches, dependent: :destroy
   has_many :user_pitch_reactions, as: :user_pitch_reactionable
   has_one :profile_user, dependent: :destroy
   
+  enum role: %i(user owner admin)
   mount_uploader :avatar, AvatarUploader
 
   validates :fullname, presence: true, length: {maximum: Settings.users.name.max_length}
@@ -27,7 +28,7 @@ class User < ApplicationRecord
       BCrypt::Password.create(string, cost: cost)
     end
   end
-  
+
   private
 
   def downcase_email
