@@ -48,7 +48,7 @@
             <p><%= pitch.description %></p>
             <p>
               <a class="btn btn-default" ><%= pitch.price %><%= t ".vnd" %></a>
-              <%= link_to t(".detail"),"#" , class: "btn btn-hinfo" %>
+              <%= link_to t(".detail"), pitch, class: "btn btn-hinfo" %>
             </p>
             <%= link_to t(".booking"), "#", class: "btn btn-hdanger" %>
           </div>
