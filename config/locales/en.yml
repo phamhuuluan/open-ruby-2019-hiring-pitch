@@ -2,11 +2,14 @@ en:
   static_pages:
     home:
       home: "Hiring-Pitch"
-      welcome: "Welcome"
+      welcome: "Welcome to the football field"
       some_text: "Some text.."
       aic: "AIC SPORT"
       banner: "Prestige quality convenience"
       search: "Search"
+      detail: "Detail"
+      booking: "Booking"
+      vnd: "VND/h"
   
   layouts: 
     application:
@@ -111,6 +114,11 @@ en:
         not_deleted: "Erorr Delete"
       show:
         not_found: "Not Found Pitch"
+        number_reviews: "10 reviews"
+        current_price: "Current price :"
+        vnd: "VND/H"
+        time: "Time : "
+        booking: "Booking"
       form:
         submit: "Submit"
         description: "Description"
@@ -130,3 +138,4 @@ en:
         delete: "Delete"
         disable: "Disable"
         enable: "Enable"
+  error: "Start time must be less than end time"

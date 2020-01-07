@@ -6,6 +6,6 @@
   <td><%= pitch.end_time %></td>
   <td><%= pitch.price %></td>
   <td><%= t(".owner.pitches.pitch.#{pitch.status}") %></td>
-  <th><td><%= link_to t("update"), edit_owner_pitch_path(pitch.id), class: "btn btn-primary" %></td>
-  <td><%= link_to t("delete"), owner_pitch_path(pitch.id), method: :delete, data: { confirm: t(".sure") }, class: "btn btn-danger" %></td></th>
+  <th><td><%= link_to t("update"), edit_owner_pitch_path(pitch), class: "btn btn-primary" %></td>
+  <td><%= link_to t("delete"), owner_pitch_path(pitch), method: :delete, data: {confirm: t(".sure")}, class: "btn btn-danger" %></td></th>
 </tr>
