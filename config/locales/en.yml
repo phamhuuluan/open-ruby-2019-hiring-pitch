@@ -119,6 +119,7 @@ en:
         vnd: "VND/H"
         time: "Time : "
         booking: "Booking"
+        to_comment: "To Comment"
       form:
         submit: "Submit"
         description: "Description"
@@ -157,3 +158,19 @@ en:
       not_found: "not found user"
       successful: "Successful booking, please check the information"
       fail: "Booking failed, please check again"
+  comments:
+    create:
+      successful: "Add successful comments"
+      fail: "More comments failed"
+      not_found: "Not foud pitch"
+      loggin: "login required"
+    destroy:
+      delete_comment: "Successfully deleted the comment"
+      not_deleted: "comment removal failed"
+    comment:
+      delete: "Delete"
+      sure: "You Sure?"
+    new:
+      new: "New Comment"
+      submit: "Submit"
+      your_comment: "Your comment"

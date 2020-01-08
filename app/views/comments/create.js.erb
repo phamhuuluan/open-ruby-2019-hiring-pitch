@@ -1,0 +1,3 @@
+$('#text_area').val('');
+$('#comment_partial').prepend('<%= j render partial: "comments/comment",
+  locals: {user: find_user_comment(@comment), comment: @comment}%>');

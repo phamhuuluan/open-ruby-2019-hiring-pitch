@@ -2,6 +2,7 @@ class Pitch < ApplicationRecord
   belongs_to :user
   has_many :user_pitch_reactions, class_name: UserPitchReaction.name
   has_many :bookings
+  has_many :comments
 
   scope :create_at_desc, -> {order created_at: :desc}
   scope :search_pitch, ->search{where("description LIKE ?", "%#{search}%").or where("address LIKE ?","%#{search}%")}
