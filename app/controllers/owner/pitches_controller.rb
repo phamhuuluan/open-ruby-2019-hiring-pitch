@@ -3,7 +3,11 @@ class Owner::PitchesController < OwnerController
   before_action :correct_user, only: :destroy
 
   def index
-    @pitches = current_user.pitches.created_at.page(params[:page]).per Settings.perpage
+    if params[:search]
+      @pitches = current_user.pitches.create_at_desc.search_pitch(params[:search]).page(params[:page]).per Settings.perpage
+    else
+      @pitches = current_user.pitches.create_at_desc.page(params[:page]).per Settings.perpage
+    end
   end
 
   def new
