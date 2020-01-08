@@ -7,7 +7,7 @@
           <%= text_field_tag :search, params[:search], class: "form-control", placeholder: t(".search") %>
             <div class="input-group-btn">
               <%= button_tag(type: "submit", class:"btn btn-default col-md-4") do %>
-                <i class="glyphicon glyphicon-search"></i>
+                <i class="glyphicon glyphicon-search" id="icon_search"></i>
               <% end %>
             </div>
         </div>
@@ -50,12 +50,12 @@
               <a class="btn btn-default" ><%= pitch.price %><%= t ".vnd" %></a>
               <%= link_to t(".detail"), pitch, class: "btn btn-hinfo" %>
             </p>
-            <%= link_to t(".booking"), "#", class: "btn btn-hdanger" %>
+            <%= link_to t(".booking"), new_pitch_booking_path(pitch.id), class: "btn btn-hdanger" %>
           </div>
         </div>
       </div>
     <% end %>
     </div>
-    <%= paginate @pitches, theme: "twitter-bootstrap-3" %>
+    <%= paginate @pitches, theme: Settings.theme %>
   </div>
 <div>

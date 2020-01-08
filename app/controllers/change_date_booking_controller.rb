@@ -1,0 +1,16 @@
+class ChangeDateBookingController < ApplicationController
+  def show
+    @time = []
+    pitch = Pitch.find_by id: params[:id]
+    for i in pitch.start_time.hour..pitch.end_time.hour
+      @time << i
+    end
+
+    bookings_id = UserPitchReaction.where(pitch_id: params[:pitch_id]).pluck(:reactions_id)
+    ordered_time = Booking.where(booking_day: params[:datetime].to_date.beginning_of_day..params[:datetime].to_date.end_of_day)
+      .pluck(:booking_day).map{|time| time.hour}
+    @result = @time - ordered_time
+
+    respond_to :js
+  end
+end

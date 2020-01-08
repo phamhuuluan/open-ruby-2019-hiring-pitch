@@ -1,3 +1,5 @@
 class UserPitchReaction < ApplicationRecord
-  belongs_to :user_pitch_reactionable, polymorphic: true
+  belongs_to :reactions, polymorphic: true
+  belongs_to :user
+  belongs_to :pitch
 end
