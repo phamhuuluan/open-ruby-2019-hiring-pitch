@@ -1,9 +1,11 @@
 class Pitch < ApplicationRecord
   belongs_to :user
   has_many :user_pitch_reactions, as: :user_pitch_reactionable
-  scope :created_at, -> {order(created_at: :desc)}
+  scope :create_at_desc, -> {order created_at: :desc}
+  scope :search_pitch, ->search{where("description LIKE ?", "%#{search}%").or where("address LIKE ?","%#{search}%")}
 
   enum status: {disable: 0, enable: 1}
+
   mount_uploader :image, ImageUploader
   validate :image_size
   validates :start_time, presence: true
