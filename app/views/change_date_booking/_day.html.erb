@@ -1,0 +1,7 @@
+<% @time.each do |time| %>
+  <% if @result.include? time %>
+    <span class="btn btn-primary"><%= time %><%= t ".h" %></span>
+  <% else %>
+    <span class="btn btn-danger"><%= time %><%= t ".h" %></span>
+  <% end %>
+<% end %>

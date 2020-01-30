@@ -1,0 +1,54 @@
+<div id="booking" class="section">
+  <div class="section-center">
+    <div class="container">
+      <div class="row">
+        <div class="booking-form">
+          <div class="form-header">
+            <h1><%= t ".booking" %></h1>
+          </div>
+          <%= form_for [:pitch, @booking] do |f| %>
+            <%= render "shared/error_messages", object: f.object %>
+            <%= f.hidden_field :pitch_id, value: @pitch.id %>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <span class="form-label"><%= t ".name" %></span>
+                  <%= f.text_field :fullname, class: "form-control", value: current_user.fullname, disabled: true %>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <span class="form-label"><%= t ".pitch" %></span>
+                  <%= f.text_field :description, class: "form-control", value: @pitch.description, disabled: true %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-5">
+                <div class="form-group">
+                  <span class="form-label"><%= t ".booking_time" %></span>
+                  <%= f.datetime_field :booking_day, class: "form-control", id: "booking_day", required: true %>
+                </div>
+              </div>
+            </div>
+            <h4 class="price"><span><%= t ".price" %><%= @pitch.price %><%= t ".vnd" %></span></h4>
+            <div id= "list_date_booking">
+
+						</div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <span class="form-label"><%= t ".message" %></span>
+                  <%= f.text_field :message, class: "form-control", id: "message" %>
+                </div>
+              </div>
+            </div>
+            <div class="form-btn">
+              <button class="submit-btn"><%= t ".booking" %></button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,15 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_06_200920) do
+ActiveRecord::Schema.define(version: 2020_01_17_144039) do
 
   create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
     t.string "message"
     t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "booking_day"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -51,10 +50,11 @@ ActiveRecord::Schema.define(version: 2020_01_06_200920) do
   create_table "user_pitch_reactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "pitch_id"
-    t.integer "user_pitch_id"
-    t.string "user_pitch_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "reactions_type"
+    t.bigint "reactions_id"
+    t.index ["reactions_type", "reactions_id"], name: "index_user_pitch_reactions_on_reactions_type_and_reactions_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

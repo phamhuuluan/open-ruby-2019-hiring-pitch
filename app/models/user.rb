@@ -4,9 +4,9 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   has_many :pitches, dependent: :destroy
-  has_many :user_pitch_reactions, as: :user_pitch_reactionable
+  has_many :user_pitch_reactions, class_name: UserPitchReaction.name
   has_one :profile_user, dependent: :destroy
-  
+
   enum role: %i(user owner admin)
   mount_uploader :avatar, AvatarUploader
 
@@ -18,10 +18,13 @@ class User < ApplicationRecord
   validate  :avatar_size
 
   has_secure_password
-  
+
   USER_PARAMS = %i(fullname email password password_confirmation).freeze
   USER_UPDATE_PARAMS = %i(fullname email password password_confirmation address phone avatar).freeze
- 
+
+  has_many :active_user, ->{where user_pitch_type: Booking.name}, class_name: UserPitchReaction.name,
+  foreign_key: :user_id
+
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost

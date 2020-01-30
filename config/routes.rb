@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   resources :users, except: %i(index destroy)
-  resources :pitches
+  resources :change_date_booking, only: :show
+
+  resources :pitches do
+    resources :bookings
+  end
 
   namespace :owner do
     resources :pitches

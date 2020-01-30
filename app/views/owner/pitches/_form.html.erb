@@ -13,6 +13,6 @@
   <%= f.label :price, t(".price") %>
   <%= f.number_field :price, class: "form-control", required: "required" %><br>
   <%= f.label :status, t(".status") %>
-   <%= f.select :status, pitch_status_option, required: "required" %><br><br>
+  <%= f.select :status, pitch_status_option, required: "required" %><br><br>
   <%= f.submit t(".submit"), class: "btn btn-primary" %>
 <% end %>
