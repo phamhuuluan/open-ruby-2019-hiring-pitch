@@ -1,0 +1,15 @@
+<div class="media">
+<span class="pull-left"><%= image_tag(get_image(user), class: "img-responsive img-circle") %></span>
+  <div class="media-body">
+    <h4 class="media-heading"><%= user.fullname %></h4>
+    <p><%= comment.content %></p>
+    <ul class="list-unstyled list-inline media-detail pull-left">
+      <li><i class="fa fa-calendar"></i><%= comment.created_at.strftime(Settings.time.time_comment) %></li>
+    </ul>
+    <ul class="list-unstyled list-inline media-detail pull-right">
+      <% if current_user.eql? user %>
+        <li><%= link_to t(".delete"), comment, method: :delete, data: {confirm: t(".sure")}, class: "btn btn-danger" %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

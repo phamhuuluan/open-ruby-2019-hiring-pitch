@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, except: %i(index destroy)
   resources :change_date_booking, only: :show
+  resources :comments, only: %i(create destroy)
 
   resources :pitches do
     resources :bookings

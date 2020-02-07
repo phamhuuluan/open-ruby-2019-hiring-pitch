@@ -17,4 +17,9 @@ module ApplicationHelper
       [t(".owner.pitches.form.#{key}"), key]
     end
   end
+
+  def find_user_comment comment
+    user_id = UserPitchReaction.where(reactions_type: Comment.name, reactions_id: comment.id).first.user_id
+    User.find_by(id: user_id)
+  end
 end

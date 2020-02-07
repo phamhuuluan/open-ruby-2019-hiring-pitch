@@ -6,8 +6,8 @@ class ChangeDateBookingController < ApplicationController
       @time << i
     end
 
-    bookings_id = UserPitchReaction.where(pitch_id: params[:pitch_id]).pluck(:reactions_id)
-    ordered_time = Booking.where(booking_day: params[:datetime].to_date.beginning_of_day..params[:datetime].to_date.end_of_day)
+    booking = UserPitchReaction.where(reactions_type: Booking.name, pitch_id: params[:id]).pluck(:reactions_id)
+    ordered_time = Booking.where(id: booking, booking_day: params[:datetime].to_date.beginning_of_day..params[:datetime].to_date.end_of_day)
       .pluck(:booking_day).map{|time| time.hour}
     @result = @time - ordered_time
 

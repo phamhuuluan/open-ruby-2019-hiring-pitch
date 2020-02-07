@@ -22,4 +22,5 @@ uploader:
 perpage: 10
 time:
   strftime: "%H:%M"
+  time_comment: "%B, %d %Y %H:%M"
 theme: "twitter-bootstrap-3"
