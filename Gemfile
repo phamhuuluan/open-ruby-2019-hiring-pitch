@@ -9,7 +9,7 @@ gem "config"
 gem "bootstrap-sass", "3.3.7"
 gem "jquery-rails"
 gem "rails-i18n"
-gem "carrierwave", "1.2.2"     
+gem "carrierwave", "1.2.2"
 gem "mini_magick", "4.7.0"
 gem "bcrypt","3.1.12"
 gem "puma", "~> 4.1"
@@ -19,10 +19,17 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.7"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "kaminari"
-gem "bootstrap-kaminari-views" 
+gem "bootstrap-kaminari-views"
+gem "ffaker"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "shoulda-matchers"
+  gem "simplecov", require: false
+  gem "database_cleaner"
+  gem "capybara"
 end
 
 group :development do

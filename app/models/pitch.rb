@@ -1,8 +1,10 @@
 class Pitch < ApplicationRecord
   belongs_to :user
   has_many :user_pitch_reactions, class_name: UserPitchReaction.name
-  has_many :bookings
-  has_many :comments
+  has_many :bookings, through: :user_pitch_reactions, source: :reactions,
+    source_type: Booking.name, dependent: :destroy
+  has_many :comments, through: :user_pitch_reactions, source: :reactions,
+    source_type: Comment.name, dependent: :destroy
 
   scope :create_at_desc, -> {order created_at: :desc}
   scope :search_pitch, ->search{where("description LIKE ?", "%#{search}%").or where("address LIKE ?","%#{search}%")}
