@@ -14,7 +14,10 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find_by id: params[:id]
-    @comment.destroy
+
+    if current_user.eql? UserPitchReaction.comment_reaction(@comment.id).first&.user
+      @comment.destroy
+    end
 
     if @comment.destroyed?
       flash[:success] = t ".delete_comment"

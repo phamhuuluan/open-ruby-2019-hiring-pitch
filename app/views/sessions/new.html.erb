@@ -1,22 +1,22 @@
 <% provide :title, t(".login") %>
 <div class="login-form">
-<%= form_for :session, url: login_path do |f| %>
-  <h2 class="text-center"><%= t ".login" %></h2>
-  <div class="form-group">
-    <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-user"></i></span>
-      <%= f.email_field :email, class: "form-control", placeholder: t(".email"), required:"required" %>
+  <%= form_for :session, url: login_path do |f| %>
+    <h1 class="text-center"><%= t ".login" %></h1>
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <%= f.email_field :email, class: "form-control", placeholder: t(".email"), required:"required" %>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <%= f.password_field :password, class: "form-control", placeholder: t(".password"), required:"required" %>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-      <%= f.password_field :password, class: "form-control", placeholder: t(".password"), required:"required" %>
+    <div class="form-group group-btn">
+      <%= f.submit t(".submit"), class: "btn btn-primary login-btn" %>
     </div>
-   </div>
-  <div class="form-group">
-    <%= f.submit t(".submit"), class: "btn btn-primary" %>
-  </div>
-<% end %>
-<p class="text-center text-muted small"><%= t(".donnot", href1: link_to(t(".Sign_up"), signup_path )).html_safe %></p>
+  <% end %>
+ <p class="text-center text-muted small"><%= t(".donnot", href1: link_to(t(".sign_up"), signup_path )).html_safe %></p>
 </div>

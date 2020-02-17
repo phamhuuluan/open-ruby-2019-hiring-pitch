@@ -6,7 +6,12 @@ class SessionsController < ApplicationController
 
     if user&.authenticate params[:session][:password]
       log_in user
-      redirect_to root_url
+
+      if user.owner?
+        redirect_to owner_pitches_path
+      else
+        redirect_to root_path
+      end
     else
       flash.now[:danger] = t ".danger"
       render :new
@@ -16,5 +21,5 @@ class SessionsController < ApplicationController
   def destroy
     log_out
     redirect_to root_url
-  end  
+  end
 end

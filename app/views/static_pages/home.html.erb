@@ -1,17 +1,17 @@
 <% provide :title, t(".home") %>
 <div class= "home">
   <section class="carousel-default">
-    <div id="carousel-default" class="carousel slide" data-ride="carousel">
-      <%= form_tag(root_path, class: "navbar-form navbar-center", method: :get) do |f| %>
-        <div class="input-group col-md-6">
-          <%= text_field_tag :search, params[:search], class: "form-control", placeholder: t(".search") %>
-            <div class="input-group-btn">
-              <%= button_tag(type: "submit", class:"btn btn-default col-md-4") do %>
-                <i class="glyphicon glyphicon-search" id="icon_search"></i>
-              <% end %>
-            </div>
+    <%= form_tag(root_path, class: "navbar-form navbar-center", method: :get) do |f| %>
+      <div class="input-group col-md-6">
+        <%= text_field_tag :search, params[:search], class: "form-control", placeholder: t(".search") %>
+        <div class="input-group-btn">
+          <%= button_tag(type: "submit", class:"btn btn-default col-md-4") do %>
+            <i class="glyphicon glyphicon-search" id="icon_search"></i>
+          <% end %>
         </div>
-      <% end %>
+      </div>
+    <% end %>
+    <div id="carousel-default" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner" role="listbox">
         <div class="item">
           <%= image_tag Settings.home.img_baner1 %>
