@@ -1,6 +1,5 @@
 class Booking < ApplicationRecord
   has_many :user_pitch_reactions, as: :reactions
-  belongs_to :pitch, optional: true
 
   BOOKING_PARAMS = %i(message price booking_day).freeze
 
